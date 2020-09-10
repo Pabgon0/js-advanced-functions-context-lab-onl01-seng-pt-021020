@@ -56,6 +56,19 @@ let wagesEarnedOnDate = function(dateSought){
         * this.payPerHour
     return parseFloat(rawWage.toString())
 }
+
+let findEmployeeByFirstName = function(srcArray, firstName) {
+  return srcArray.find(function(rec){
+    return rec.firstName === firstName
+  })
+}
+
+let calculatePayroll = function(arrayOfEmployeeRecords){
+    return arrayOfEmployeeRecords.reduce(function(memo, rec){
+        return memo + allWagesFor.call(rec)
+    }, 0)
+}
+
 /*
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
